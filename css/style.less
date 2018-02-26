@@ -1,0 +1,285 @@
+/*//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+FELDY FARE
+
+Theme Name: Avada Child Theme
+Author: Tom Brookes & Tom Dent
+Author URI: http://www.doubledcreative.com
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+CONTENTS
+
+- Less Mixins
+- Fonts
+- Site Colours
+- Global Styles
+- Containers
+- Columns
+- Colour Variations
+- Media Queries
+	- 1024px
+	- 800px
+	- 500px
+	
+	
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* LESS CSS IMPORTS */
+
+@import "header-footer.less";
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+/* LESS MIXINS */
+
+/* Box Shadow */
+.box-shadow(@box-shadow: 0 150px 75px #000;){
+	-webkit-box-shadow: @box-shadow!important;
+	-moz-box-shadow: @box-shadow!important;
+	box-shadow: @box-shadow!important;
+}
+
+/* Transition */
+.transition(@transition: all 0.2s ease-in-out){
+	-webkit-transition: @transition;
+	-moz-transition: @transition;
+	-o-transition: @transition;
+	transition: @transition;
+}
+
+/* Border Radius */
+.border-radius(@border-radius: 2px){
+	-webkit-border-radius: @border-radius!important;
+	-moz-border-radius: @border-radius!important;
+	border-radius: @border-radius!important;
+}
+
+/* Border Stlying */
+.border(@border: 1px){
+	border-width: @border;
+	border-color: @grey2;
+	border-style: solid;
+}
+
+/* 2 Column Split */
+.column-split(@column-count: 2; @column-gap: 20px){
+	-webkit-column-count: @column-count;
+	-moz-column-count: @column-count;
+	column-count: @column-count;
+	-webkit-column-gap: @column-gap;
+	-moz-column-gap: @column-gap;
+	column-gap: @column-gap;
+}
+
+/* Button Stlying */
+.button(){}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* FONTS */
+
+/* Last Of Type */
+
+.page-template-default, .page-template, .page{
+	p:last-of-type{margin-bottom: 0!important;}
+	ul:last-of-type{margin-bottom: 0!important;}
+	li:last-of-type{margin-bottom: 0!important;}
+	ol:last-of-type{margin-bottom: 0!important;}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* COLOURS */
+
+/* Project Colours */
+
+@blue1:  		#2991d6!important;			/* Blue */
+@blue1:			#46a7e8!important;			/* Lighter blue1 */
+@green11:  		#abc90c!important;			/* Green */
+@grey1:  		#f7f9fa!important;			/* Light Grey */
+@grey2:  		#eff3f6!important;			/* Stroke Grey */
+@grey3:			#5d747a!important;			/* Body Copy Grey */
+@slate1:		#95abb1!important;			/* Slate - Light */
+@slate2:		#5d747a!important;			/* Slate */
+@slate3:		#3c4a4e!important;			/* Slate - Dark */
+
+/* Generic Colours */
+
+@white:  		#FFFFFF!important;			/* White */
+@black:			#000000!important;			/* Black */
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+/* GLOBAL STYLES */
+
+/* Main Body - Page Padding */
+#main{padding-left: 0!important; padding-right: 0!important;}
+
+/* Body Styling */
+body{-webkit-font-smoothing: antialiased!important;}
+
+/* iFrame Border */
+iframe{border:none!important;}
+
+/* iOS Input Styling Over-ride */
+.input-text{   
+    -webkit-appearance: none!important;
+    -moz-appearance: none!important;
+    appearance: none!important;
+    .border-radius(@border-radius: 0);
+}
+
+/* iOS Tel Number Styling Over-ride */
+a[href^=tel] {color: inherit; text-decoration: none;}
+
+/* Bottom Margin Responsive Margin Removal */
+#content{margin-bottom: 0!important;}
+
+/* To-Top Button */
+#toTop{background-color: @green1; .border-radius(@border-radius: 4px 4px 0 0); opacity: 1; height: 50px!important; width: 50px!important; line-height: 50px!important;
+	&:hover{height: 60px!important;}
+	&:before{color: @white;}
+}
+
+/* Content Box Styling */
+.fusion-content-boxes{margin-bottom: 0!important;
+	.fusion-column{margin-bottom: 16px!important; padding: 0!important;
+		.content-wrapper{
+			.fusion-clearfix{display: none;}
+			.heading{float: left;
+				a{
+					.icon{
+						fa{
+							&:before{}
+						}
+					}
+				}
+			}
+			.content-container{margin-bottom: 0!important; display: table; float: left; height: 32px; width: 100%;
+				p{display: table-cell; vertical-align: middle;}
+			}												
+			&:hover{
+				.content-container{
+					p{text-decoration: underline;}
+				}
+			}	
+		}
+	}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* CONTAINERS */
+
+/* Blank Container */
+.ddc-container-0{margin: 0!important; padding: 0!important;}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* COLUMNS */
+
+/* Blank Column */
+.ddc-column-0{
+	.fusion-column-wrapper{margin: 0!important; padding: 0!important;}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* COLOUR VARIATIONS */
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* PAGE TITLE */
+
+.fusion-page-title-bar{height: auto!important;
+	.fusion-page-title-row{
+		.fusion-page-title-wrapper{
+			.fusion-page-title-captions{padding: 120px 30px 50px!important;	
+				h1{}	
+				h3{font-size: 22px; line-height: 30px; margin-top: 14px; margin-bottom: 5px; color: @grey2;}	
+				.fusion-page-title-secondary{margin-top: 15px;
+					.fusion-breadcrumbs{
+						a{}
+						.fusion-breadcrumb-sep{}
+						.breadcrumb-leaf{}
+					}
+					
+					
+					&:after{content: ''; color: @white; display: block; width: 30px; height: 30px; background: @blue1; margin: 40px auto 0; .border-radius(@border-radius: 15px); font-family: 'FontAwesome'; font-weight: bold; padding: 1px 0 0;}
+					
+					
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 1024px ///////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media only screen and (max-width: 1024px) {
+	
+}
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 800px ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media only screen and (max-width: 800px) {
+	
+}
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 500px ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media only screen and (max-width: 500px) {
+	
+}
