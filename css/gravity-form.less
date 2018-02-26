@@ -1,0 +1,339 @@
+/*//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Gravity Forms
+
+Theme Name: Avada Child Theme
+Author: Tom Brookes & Tom Dent
+Author URI: http://www.doubledcreative.com
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* FORM COLOURS */
+
+@focus-colour:  		#fff8db!important;		/* Focus Background Colour */
+@validation-colour:  	#fd9821!important;		/* Validation Background Colour */
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* FORM MIXINS */
+
+/* Font Styling */
+.form-font(){
+	font-family:'Lora'!important;
+	font-size: 16px!important;
+	line-height: 26px!important;
+	text-transform: none!important;
+	letter-spacing: 0!important;
+	color: @black;
+	font-weight: 700!important;
+}
+
+/* Border Width */
+.form-border(@border: 0){
+	border-width: @border!important;
+	border-color: @grey1!important;
+	border-style: solid!important;
+}
+
+/* Border Radius */
+.form-border-radius(@border-radius: 3px){
+	-webkit-border-radius:@border-radius!important;
+	-moz-border-radius:@border-radius!important;
+	border-radius:@border-radius!important;;
+}
+
+/* Input Box Height */
+.form-input-height(){
+	height:50px!important;
+}
+
+/* Placeholder Font Colour */
+.placeholder-font-colour(){
+	color: @black;
+}
+
+/* Focus Background Colour */
+.form-input-focus(){
+	background-color: @focus-colour;
+}
+
+/* Form Maximum Width */
+.form-max-width(){
+	max-width: 600px;
+}
+
+.submit-button(){
+	width: auto!important;
+	display: inline-block!important;
+		input{
+			padding:13px 20px!important;
+			background:#a0a0a0!important;
+			.border-radius()!important;
+			.lora();
+			.border-radius(@border-radius:3px);
+			font-size:16px!important;
+			line-height:16px!important;
+			.transition(@transition: all 0.5s ease-in-out)!important;
+			font-weight:bold;
+			&:hover{
+				background: @black;
+			}
+		}	
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* VALIDATION MIXINS */
+
+/* Top Message Styling */
+.form-validation-error-message(){
+	.form-border(@border: 0);
+	.form-border-radius();
+	background-color: @validation-colour!important;
+}
+
+/* Font Styling */
+.form-validation-font(){
+	.lora();
+	font-size: 12px!important;
+	line-height: 14px!important;
+	text-transform: none!important;
+	letter-spacing: 0!important;
+	color: @black;
+	text-align: left;
+}
+
+/* Input Box Styling */
+.form-validation-input(@border: 2px){
+	.form-border-radius();
+	border-color: @validation-colour!important;
+	border-width: @border!important;
+	border-style: solid!important;
+	background-color: @validation-colour!important;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* GRAVITY FORM STYLING */
+
+/* Form Styling */
+.gf_browser_chrome, .gform_wrapper{margin: 0 auto; .form-max-width();
+	form{text-align: center;
+		.gform_body{
+			ul{
+				li{padding: 0!important; margin: 0 0 10px!important; width: 100%!important; max-width: 100%!important;
+					.ginput_container, .ginput_container_text, .ginput_container_textarea{margin:0!important;
+						input, textarea{margin:0!important; padding: 15px!important; .form-border-radius(); .form-font(); .form-border();background:#eee;width:100%;
+							&:focus{.transition(); .form-input-focus();}
+						}
+						input{.form-input-height();}
+					}
+					.ginput_container_checkbox{text-align: left;
+						ul{margin: 0!important;
+							li{margin: 0!important;
+								input{height: auto!important;}
+								label{font-size: 14px!important; padding: 5px 0 5px 15px!important;}
+							}
+						}
+					}	
+				}
+			}
+		}
+		.gform_footer{width: 100%; display: block; padding: 0!important; .submit-button();margin:0!important;
+			input[type=submit]{display: block!important; margin:0 auto!important;}
+		}
+	}
+}
+
+/* Half input Styling */
+.gf_browser_chrome, .gform_wrapper{
+	form{
+		.gform_body{
+			ul{
+				.grav_half_left{width: 49%!important; clear: none!important; float: left!important;}
+				.grav_half_right{width: 49%!important; clear: none!important; float: right!important;}	
+			}
+		}
+	}	
+}
+
+/* Placeholder Font Colour */
+::-webkit-input-placeholder{.placeholder-font-colour();}
+:-moz-placeholder{.placeholder-font-colour();}
+::-moz-placeholder{.placeholder-font-colour();}
+:-ms-input-placeholder{.placeholder-font-colour();}
+.placeholder{.placeholder-font-colour();}
+
+/* Validation Styling */
+.gform_validation_error{
+	form{	
+		.validation_error{padding: 15px; .form-font(); .form-validation-error-message();}
+		.gform_body{
+			ul{
+				li{.form-validation-input();
+					.gfield_description, .validation_message{padding: 10px 15px 8px; .form-validation-font();}	
+				}
+				#field_1_8{.form-border(@border: 0); background: rgba(0,0,0,0)!important;
+					.ginput_container_checkbox{
+						ul{margin: 0!important;
+							li{margin: 0!important; .form-border(@border: 0); background: rgba(0,0,0,0)!important;}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 1025PX ///////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media only screen and (max-width: 1025px) {
+	
+	
+	/* GRAVITY FORM STYLING */	
+
+	/* Button Margin */
+	.gf_browser_chrome, .gform_wrapper{
+		#gform_1{
+			.gform_footer{margin: 0 0 20px!important;}
+		}
+	}
+		
+		
+}
+
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 800PX ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media only screen and (max-width: 800px) {
+	
+	
+	/* FORM MIXINS */
+	
+	/* Font Styling */
+	.form-font(){
+		font-size: 16px!important;
+		line-height: 24px!important;
+	}
+	
+	/* Button Styling */
+	.submit-button(){
+		width: 100%!important;
+		display: block!important;
+	}
+	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+
+	/* GRAVITY FORM STYLING */
+	
+	/* Half input Styling */
+	.gf_browser_chrome, .gform_wrapper{
+		#gform_1{
+			.gform_body{
+				ul{
+					li{
+						.ginput_container, .ginput_container_text, .ginput_container_textarea{
+							input, textarea{.form-font();}
+						}
+					}
+					.grav_half_left, .grav_half_right{width: 100%!important; float: left!important;}
+				}
+			}
+			.gform_footer{.submit-button();}
+		}
+	}
+		
+		
+}
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 500PX ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media only screen and (max-width: 500px) {
+
+
+	/* FORM MIXINS */
+	
+	/* Font Styling */
+	.form-font(){
+		font-size: 14px!important;
+		line-height: 20px!important;
+	}
+	
+	/* Input Box Height */
+	.form-input-height(){
+		height: 45px!important;
+	}
+	
+	/* Button Styling */
+	.submit-button(){
+		input{
+			margin-bottom: -10px!important;
+			font-size: 16px!important;
+			line-height: 22px!important;
+		}
+	}
+
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	
+	/* GRAVITY FORM STYLING */
+	
+	/* Form Styling */
+	.gf_browser_chrome, .gform_wrapper{
+		#gform_1{text-align: left;
+			.gform_body{
+				ul{
+					li{margin: 0 0 15px!important;
+						.ginput_container, .ginput_container_text, .ginput_container_textarea{
+							input, textarea{.form-font();}
+							input{.form-input-height();}
+						}
+					}
+				}
+			}
+			.gform_footer{.submit-button();}
+		}
+	}
+
+		
+}
+	
