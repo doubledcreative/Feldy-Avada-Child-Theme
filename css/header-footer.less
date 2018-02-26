@@ -1,0 +1,308 @@
+/*//////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+FELDY FARE
+
+Theme Name: Avada Child Theme
+Author: Tom Brookes & Tom Dent
+Author URI: http://www.doubledcreative.com
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+CONTENTS
+
+- Header
+- Footer
+- Media Queries
+	- 800px
+	- 1024px (Mobile Header Switch)
+	- 800px
+	
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* HEADER */
+
+/* Main Header */
+
+.fusion-flyout-menu-active{
+	.fusion-header{
+		.fusion-header-has-flyout-menu-content{
+			
+			.fusion-flyout-menu-icons{width: 50px;top: -15px;
+    right: 10px;
+    height: 50px;
+    padding: 17px;
+    border-radius: 25px;background:@white;
+				.fusion-flyout-menu-toggle{padding:0!important;}
+			}
+			
+			.fusion-mobile-nav-holder{margin:0!important;height:100%!important;padding:50px!important;background:@blue1;
+				ul{height:100%;
+					li.fusion-mobile-nav-item{display:table;float:left;width:50%;border-right:1px solid;border-bottom:1px solid;height:25%;
+						a{font-size:22px;display:table-cell;vertical-align:middle;
+							.fusion-megamenu-icon{display:block!important;width:100%;
+								.fa{font-size:40px;}
+							}
+						}
+						&:nth-of-type(2n+0){border-right:0;}
+						&:nth-of-type(7), &:last-of-type{border-bottom:0;}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/* FOOTER */
+
+/* Footer Styling */
+.fusion-footer{background: @grey1;
+	.fusion-footer-widget-area{padding: 0px!important; overflow: visible;
+		.fusion-row{
+			.fusion-widget-area{
+				.fusion-column{
+					.widget{
+						.insert-page{
+
+							.ddc-container-footer-logo{
+								.fusion-row{
+									.fusion-layout-column{
+										.fusion-column-wrapper{height: 90px;
+											.fusion-imageframe{overflow: visible;
+												img{margin-top: -30px;}
+											}
+										}
+									}
+								}
+							}					
+						
+							.ddc-container-footer{
+								.fusion-row{.border(1px 0); margin-bottom: 40px;
+									.fusion-layout-column{.border(0 1px 0 0);
+										&:last-of-type{.border(0);}
+										
+										.fusion-column-wrapper{padding: 40px!important; margin: -5px 0 -20px;
+																						
+											/* Titles */
+											.fusion-title{
+												h4{font-size: 24px}
+											}
+											
+											/* Text Block */
+											.fusion-text{
+												a:hover{text-decoration: underline;}
+											}
+																								
+											/* Menu */
+											.fusion-widget-area{
+												.widget{margin: -6px 0 0 0!important;
+													.menu-menu-container{
+														ul{.column-split();
+															li{padding: 0!important; .border(@border: 0); display: table; height: 36px; width: 100%;
+																a{color: @grey3; display: table-cell; vertical-align: middle; padding-left: 12px;
+																	&:hover{text-decoration: underline;}
+																	&:before{color: @green1;}
+																}
+															}
+														}
+													}
+
+												}
+											}											
+										}
+											
+									}
+									
+									/* Contact Column*/	
+									.footer-column-contact{
+										.fusion-column-wrapper{
+											.fusion-content-boxes{
+												.fusion-column{
+													.content-wrapper{cursor: auto;										
+														&:hover{
+															.content-container{
+																p{text-decoration: none!important;}
+																a{text-decoration: underline!important; cursor: pointer;}
+															}
+														}	
+													}
+												}
+											}
+										}	
+									}	
+									
+									
+									/* Social */
+									.footer-column-social{}
+									
+									
+									
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Copyright Styling */
+.fusion-footer-copyright-area{
+	.fusion-row{
+		.fusion-copyright-content{
+			.fusion-copyright-notice{
+				a, p{display: inline-block; padding: 0px 5px; margin-top: 0;}
+				a:hover{text-decoration: underline;}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 1024px ///////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media only screen and (max-width: 1024px) {
+	
+	
+}
+
+
+
+
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 800px ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media only screen and (max-width: 800px) {
+	
+	
+	/* Footer Styling */
+	.fusion-footer{
+		.fusion-footer-widget-area{
+			.fusion-row{
+				.fusion-widget-area{
+					.fusion-column{
+						.widget{
+							.insert-page{				
+								.ddc-container-footer{
+									.fusion-row{.border(0);
+										.fusion-layout-column{
+											.fusion-column-wrapper{padding: 0!important; margin: 0;
+												.fusion-accordian{
+													.panel-group{
+														.fusion-panel{margin: 0!important; .border(1px 0 0);
+															&:last-of-type{.border(1px 0);}
+																													
+															/* Heading */
+															.panel-heading{display: table; width: 100%;
+																.panel-title, .toggle{display: table-cell; vertical-align: middle;
+																	a{color: @blue1; text-decoration: none; display: flex; flex-direction: row-reverse; padding: 20px 25px;
+																		.fusion-toggle-heading{width: 100%; margin: 0!important;}
+																		.fusion-toggle-icon-wrapper{
+																			.fa-fusion-box{background: transparent!important; padding: 0!important;
+																				&:before{width: 10px!important; color: @blue1;}
+																			}
+																		}
+																	}	
+																}
+															}
+															
+															/* Panels */
+															.panel-collapse, .collapse{background: @white;
+																.panel-body, .toggle-content{padding: 5px 0 0;
+																	.fusion-text{padding: 2px 25px 22px!important;}
+																}
+															}
+															
+														}
+													}
+												}		
+												
+												/* Menu */
+												.fusion-widget-area{
+													.widget{margin: 0!important;
+														.menu-menu-container{
+															ul{.column-split(@column-count: 1; @column-gap: 0);
+																li{.border(@border: 0 0 1px 0); height: 60px;
+																	&:last-of-type{.border(@border: 0);}
+																	a{color: @grey3; display: table-cell; vertical-align: middle; padding-left: 36px;}
+																}
+															}
+														}
+													}
+												}
+																
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	
+	/* Social Links */
+	.fusion-social-links{text-align: center; margin: 40px 0;
+		.fusion-social-networks{
+			.fusion-social-networks-wrapper{
+				.fusion-social-network-icon{margin: 0 3px!important;
+					&:hover{text-decoration: none;}
+					&:before{}
+				}
+			}
+		}
+	}
+	
+	
+	/* Copyright Styling */
+	.fusion-footer-copyright-area{padding: 20px 25px;
+		.fusion-row{
+			.fusion-copyright-content{
+				.fusion-copyright-notice{
+					a, p{display: inline-block; padding: 0px 5px;}
+					a:hover{text-decoration: underline;}
+				}
+			}
+		}
+	}
+
+
+}
+
+
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+/* MEDIA QUERIES 500px ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+@media only screen and (max-width: 500px) {
+	
+
+	
+}
